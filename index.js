@@ -25,15 +25,15 @@ function playRound(playerSelection, computerSelection) {
 }
 
 
-function game() {
-    for (let i = 0; i < 5; i++) {
-        const playerSelection = prompt('Enter a message; Rock, Paper, Scissors');
-        const lower = playerSelection.toLowerCase();
-        const computerSelection = getComputerChoice();
-        console.log(`player: ${lower} computer: ${computerSelection} ${playRound(lower, computerSelection)}`);
-    }
-}
-game();
+// function game() {
+//     for (let i = 0; i < 5; i++) {
+//         const playerSelection = prompt('Enter a message; Rock, Paper, Scissors');
+//         const lower = playerSelection.toLowerCase();
+//         const computerSelection = getComputerChoice();
+//         console.log(`player: ${lower} computer: ${computerSelection} ${playRound(lower, computerSelection)}`);
+//     }
+// }
+// game();
 
 
 

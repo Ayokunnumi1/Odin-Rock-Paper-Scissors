@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color:#080e2c ;
+}
+.game-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 30px;
+}
+
+ .button-container {
+    display: flex;
+    flex-direction: row;
+   gap: 40px;
+   align-items: center;
+}
+
+.btn {
+    padding: 30px;
+    cursor: pointer;
+}
