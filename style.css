@@ -31,13 +31,12 @@ h2 {
 .paragraph-one {
     font-family: 'lugrasimo', sans-serif;
     font-weight: 300;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 .game-area {
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     padding: 150px 15px 20px 15px;
     align-items: center;
     height: 100%;
@@ -62,10 +61,10 @@ h2 {
 }
 
 .img:hover {
-   border: 3px solid red;
+    border: 3px solid red;
 }
 
-@media screen  and (min-width : 768px) {
+@media screen and (min-width : 768px) {
     h1 {
         font-weight: 600;
         font-size: 30px;
@@ -73,12 +72,15 @@ h2 {
         padding-top: 10px;
         letter-spacing: 10px;
     }
+
     .img {
-            width: 200px;
-        }
+        width: 200px;
+    }
+
     .img-container {
         gap: 40px;
     }
+
     .game-area {
         justify-content: center;
         height: 100vh;
