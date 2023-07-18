@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lugrasimo&family=Poppins:wght@300;400;500;600&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,25 +7,81 @@
 }
 
 body {
-    background-color:#080e2c ;
+    background-color: #080e2c;
+    color: #fff;
 }
+
+h1 {
+    font-family: 'lugrasimo', sans-serif;
+    font-weight: 600;
+    font-size: 25px;
+    text-align: center;
+    background-color: #043b5c;
+    height: 80px;
+    padding-top: 10px;
+    letter-spacing: 5px;
+}
+
+h2 {
+    font-family: 'lugrasimo', sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+.paragraph-one {
+    font-family: 'lugrasimo', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+}
+
 .game-area {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
+    padding: 150px 15px 20px 15px;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     gap: 30px;
 }
 
- .button-container {
+.img-container {
     display: flex;
     flex-direction: row;
-   gap: 40px;
-   align-items: center;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
 }
 
-.btn {
-    padding: 30px;
+.question-mark {
+    width: 100px;
+}
+
+.img {
+    width: 110px;
     cursor: pointer;
+}
+
+.img:hover {
+   border: 3px solid red;
+}
+
+@media screen  and (min-width : 768px) {
+    h1 {
+        font-weight: 600;
+        font-size: 30px;
+        height: 50px;
+        padding-top: 10px;
+        letter-spacing: 10px;
+    }
+    .img {
+            width: 200px;
+        }
+    .img-container {
+        gap: 40px;
+    }
+    .game-area {
+        justify-content: center;
+        height: 100vh;
+    }
+
 }
