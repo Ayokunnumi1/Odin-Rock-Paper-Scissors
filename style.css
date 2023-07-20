@@ -4,6 +4,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'lugrasimo', sans-serif;
 }
 
 body {
@@ -12,7 +13,6 @@ body {
 }
 
 h1 {
-    font-family: 'lugrasimo', sans-serif;
     font-weight: 600;
     font-size: 25px;
     text-align: center;
@@ -22,16 +22,28 @@ h1 {
     letter-spacing: 5px;
 }
 
-h2 {
-    font-family: 'lugrasimo', sans-serif;
+.h2-one {
     font-weight: 500;
-    font-size: 30px;
+    font-size: 40px;
+}
+
+.alert-h2 {
+    font-weight: 500;
+    font-size: 50px;
+    text-align: center;
 }
 
 .paragraph-one {
-    font-family: 'lugrasimo', sans-serif;
     font-weight: 300;
     font-size: 15px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.alert-paragraph-text {
+    font-weight: 300;
+    font-size: 20px;
+    text-align: center;
 }
 
 .game-area {
@@ -67,6 +79,22 @@ h2 {
 .paper-img:hover,
 .scissors-img:hover {
     border: 3px solid red;
+}
+
+.score-container {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.player-score,
+.computer-score {
+    font-weight: 200;
+    font-size: 17px;
+}
+
+.last-paragraph {
+    font-family: 'Times New Roman', Times, serif;
 }
 
 @media screen and (min-width : 350px) {

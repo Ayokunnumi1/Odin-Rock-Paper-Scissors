@@ -11,18 +11,28 @@
 <body>
     <h1>ROCK, PAPER, SCISSORS</h1>
     <section class="game-area">
-        <h2>Choose Your Weapon</h2>
-        <p class="paragraph-one">Play 5 times to WIN the game</p>
+        <div class="instruction-text">
+            <h2 class="h2-one">Choose Your Weapon</h2>
+            <p class="paragraph-one">Play 5 times to WIN the game</p>
+        </div>
+        <div class="alert">
+            <h2 class="alert-h2"></h2>
+            <p class="alert-paragraph-text"></p>
+        </div>
         <div>
             <img src="images/Question-mark.svg" class="player-question-mark" alt="">
             <img src="images/Question-mark.svg" class="computer-question-mark" alt="">
         </div>
-        <div class="img-container">
-            <img src="images/rock-icon.svg" class="rock-img" alt="rock icon">
-            <img src="images/paper-icon.svg" class="paper-img" alt="paper icon">
-            <img src="images/scissors-icon.svg" class="scissors-img" alt="scissors icon">
+        <div class="score-container">
+            <div class="player-score">Player: <span>0</span> </div>
+            <div class="computer-score">Computer: <span>0</span></div>
         </div>
-        <p>copyright &#169; 2023 Ayokunnumi</p>
+        <div class="img-container">
+            <img src="images/rock-icon.svg" class="rock-img" id="rock" alt="rock icon">
+            <img src="images/paper-icon.svg" class="paper-img" id="paper" alt="paper icon">
+            <img src="images/scissors-icon.svg" class="scissors-img" id="scissors" alt="scissors icon">
+        </div>
+        <p class="last-paragraph">copyright &#169; 2023 Ayokunnumi</p>
         <!-- <audio autoplay src="The Charmer's Call - Hanu Dixit.mp3">
             <source src="The Charmer's Call - Hanu Dixit.mp3">
             <source src="The Charmer's Call - Hanu Dixit.wav">

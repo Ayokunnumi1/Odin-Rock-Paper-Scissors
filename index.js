@@ -4,17 +4,35 @@ const paperImage = document.querySelector('.paper-img');
 const scissorsImage = document.querySelector('.scissors-img');
 const playerQuestionMark = document.querySelector('.player-question-mark');
 const computerQuestionMark = document.querySelector('.computer-question-mark');
+let playerSelection = '';
+const instructionText = document.querySelector('.instruction-text')
+const alert = document.querySelector('.alert');
 
-rockImage.addEventListener('click', () => {
+rockImage.addEventListener('click', (e) => {
+    instructionText.style.display = 'none';
     playerQuestionMark.src = 'images/rock-icon.svg';
+    playerSelection = e.target.id
+   const computerChoice = getComputerChoice();
+    // playRound(playerSelection, computerChoice)
+    console.log(playRound(playerSelection, computerChoice))
 });
 
-paperImage.addEventListener('click', () => {
+paperImage.addEventListener('click', (e) => {
+    instructionText.style.display = 'none';
     playerQuestionMark.src = 'images/paper-icon.svg';
+    playerSelection = e.target.id
+    const computerChoice = getComputerChoice();
+    // playRound(playerSelection, computerChoice)
+    console.log(playRound(playerSelection, computerChoice))
 });
 
-scissorsImage.addEventListener('click', () => {
+scissorsImage.addEventListener('click', (e) => {
+    instructionText.style.display = 'none';
     playerQuestionMark.src = 'images/scissors-icon.svg';
+    playerSelection = e.target.id
+    const computerChoice = getComputerChoice();
+    // playRound(playerSelection, computerChoice)
+    console.log(playRound(playerSelection, computerChoice))
 });
 
 
@@ -25,7 +43,8 @@ function getComputerChoice() {
        computerQuestionMark.src =  'images/rock-icon.svg';
     }
     else if (computerChoice === 'paper') {
-        computerQuestionMark.src =  'images/paper-icon.svg';
+        computerQuestionMark.src = 'images/paper-icon.svg';
+        
     }
     else if (computerChoice === 'scissors') {
         computerQuestionMark.src =  'images/scissors-icon.svg';
@@ -36,19 +55,26 @@ function getComputerChoice() {
 
 
 function playRound(playerSelection, computerSelection) {
+    const playerWinStatus = alert.querySelector('.alert-h2');
+    const playerWinText = alert.querySelector('.alert-paragraph-text');
     if (playerSelection === computerSelection) {
-        return "It's a tie";
+        playerWinStatus.textContent = "It's a tie";
+        playerWinText.textContent = `${playerSelection} ties with ${computerSelection}`;
     }
 
     else if ((playerSelection === 'rock' && computerSelection === 'scissors') ||
         (playerSelection === 'scissors' && computerSelection === 'paper' ) ||
         (playerSelection === 'paper' && computerSelection === 'rock'))
     {
-        return 'Player won, computer lose';
-    } else if ((computerSelection === 'rock' && playerSelection === 'scissors') ||
+        playerWinStatus.textContent = 'You Won';
+        playerWinText.textContent = `${playerSelection} beat ${computerSelection}`;
+    }
+        
+    else if ((computerSelection === 'rock' && playerSelection === 'scissors') ||
         (computerSelection === 'scissors' && playerSelection === 'paper') ||
         (computerSelection === 'paper' && playerSelection === 'rock')) {
-        return 'Computer won, Player lose';
+        playerWinStatus.textContent = 'You Lost';
+        playerWinText.textContent = `${playerSelection} is beaten by ${computerSelection}`;
     }
 
 }
