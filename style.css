@@ -51,17 +51,33 @@ h2 {
     align-items: center;
 }
 
-.question-mark {
+.player-question-mark,
+.computer-question-mark {
     width: 100px;
 }
 
-.img {
+.rock-img,
+.paper-img,
+.scissors-img {
     width: 110px;
     cursor: pointer;
 }
 
-.img:hover {
+.rock-img:hover,
+.paper-img:hover,
+.scissors-img:hover {
     border: 3px solid red;
+}
+
+@media screen and (min-width : 350px) {
+    h2 {
+        font-weight: 300px;
+        font-size: 20px;
+    }
+
+    .img-container {
+        gap: 5px;
+    }
 }
 
 @media screen and (min-width : 768px) {
@@ -73,7 +89,9 @@ h2 {
         letter-spacing: 10px;
     }
 
-    .img {
+    .rock-img,
+    .paper-img,
+    .scissors-img {
         width: 200px;
     }
 
@@ -83,7 +101,6 @@ h2 {
 
     .game-area {
         justify-content: center;
-        height: 100vh;
     }
 
 }
