@@ -7,6 +7,9 @@ const computerQuestionMark = document.querySelector('.computer-question-mark');
 let playerSelection = '';
 const instructionText = document.querySelector('.instruction-text')
 const alert = document.querySelector('.alert');
+const audioWin = document.querySelector('#audio-win');
+const audioLost = document.querySelector('#audio-lost');
+const audioTie = document.querySelector('#audio-tie')
 
 rockImage.addEventListener('click', (e) => {
     instructionText.style.display = 'none';
@@ -60,6 +63,7 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         playerWinStatus.textContent = "It's a tie";
         playerWinText.textContent = `${playerSelection} ties with ${computerSelection}`;
+        audioTie.play();
     }
 
     else if ((playerSelection === 'rock' && computerSelection === 'scissors') ||
@@ -68,6 +72,7 @@ function playRound(playerSelection, computerSelection) {
     {
         playerWinStatus.textContent = 'You Won';
         playerWinText.textContent = `${playerSelection} beat ${computerSelection}`;
+        audioWin.play();
     }
         
     else if ((computerSelection === 'rock' && playerSelection === 'scissors') ||
@@ -75,6 +80,7 @@ function playRound(playerSelection, computerSelection) {
         (computerSelection === 'paper' && playerSelection === 'rock')) {
         playerWinStatus.textContent = 'You Lost';
         playerWinText.textContent = `${playerSelection} is beaten by ${computerSelection}`;
+        audioLost.play();
     }
 
 }
