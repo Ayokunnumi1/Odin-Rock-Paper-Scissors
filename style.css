@@ -97,6 +97,10 @@ h1 {
     font-family: 'Times New Roman', Times, serif;
 }
 
+.pop-up {
+    display: none;
+}
+
 @media screen and (min-width : 350px) {
     h2 {
         font-weight: 300px;

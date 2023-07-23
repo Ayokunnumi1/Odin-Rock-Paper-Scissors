@@ -10,38 +10,48 @@ const alert = document.querySelector('.alert');
 const audioWin = document.querySelector('#audio-win');
 const audioLost = document.querySelector('#audio-lost');
 const audioTie = document.querySelector('#audio-tie')
+const playerWinCount = document.querySelector('#player-win-count');
+const computerWinCount = document.querySelector('#computer-win-count');
+let playerCount = 0;
+let computerCount = 0;
 
-rockImage.addEventListener('click', (e) => {
+ function rockImageClicked (e) {
     instructionText.style.display = 'none';
     playerQuestionMark.src = 'images/rock-icon.svg';
     playerSelection = e.target.id
    const computerChoice = getComputerChoice();
     // playRound(playerSelection, computerChoice)
     console.log(playRound(playerSelection, computerChoice))
-});
+};
 
-paperImage.addEventListener('click', (e) => {
+rockImage.addEventListener('click', rockImageClicked)
+
+ function paperImageClicked (e) {
     instructionText.style.display = 'none';
     playerQuestionMark.src = 'images/paper-icon.svg';
     playerSelection = e.target.id
     const computerChoice = getComputerChoice();
     // playRound(playerSelection, computerChoice)
     console.log(playRound(playerSelection, computerChoice))
-});
+};
 
-scissorsImage.addEventListener('click', (e) => {
+paperImage.addEventListener('click', paperImageClicked);
+
+ function scissorsImageClicked(e) {
     instructionText.style.display = 'none';
     playerQuestionMark.src = 'images/scissors-icon.svg';
     playerSelection = e.target.id
     const computerChoice = getComputerChoice();
     // playRound(playerSelection, computerChoice)
     console.log(playRound(playerSelection, computerChoice))
-});
+};
 
+scissorsImage.addEventListener('click', scissorsImageClicked);
 
 function getComputerChoice() {
    const computerIndex = Math.floor(Math.random() * gameOptions.length);
     const computerChoice = gameOptions[computerIndex];
+
     if (computerChoice === 'rock') {
        computerQuestionMark.src =  'images/rock-icon.svg';
     }
@@ -73,6 +83,10 @@ function playRound(playerSelection, computerSelection) {
         playerWinStatus.textContent = 'You Won';
         playerWinText.textContent = `${playerSelection} beat ${computerSelection}`;
         audioWin.play();
+        playerCount++;
+        playerWinCount.textContent = playerCount;
+        console.log(playerCount);
+        
     }
         
     else if ((computerSelection === 'rock' && playerSelection === 'scissors') ||
@@ -81,20 +95,32 @@ function playRound(playerSelection, computerSelection) {
         playerWinStatus.textContent = 'You Lost';
         playerWinText.textContent = `${playerSelection} is beaten by ${computerSelection}`;
         audioLost.play();
+        computerCount++;
+        console.log(computerWinCount)
+        computerWinCount.textContent = computerCount;
     }
 
 }
 
 
-// function game() {
-//     for (let i = 0; i < 5; i++) {
-//         const playerSelection = prompt('Enter a message; Rock, Paper, Scissors');
-//         const lower = playerSelection.toLowerCase();
-//         const computerSelection = getComputerChoice();
-//         console.log(`player: ${lower} computer: ${computerSelection} ${playRound(lower, computerSelection)}`);
-//     }
-// }
-// game();
+function game() {
+    const youWon = document.querySelector('.You-Won');
+    const youLost = document.querySelector('.You-Lost');
+    for (let i = 0; i < 5; i++) {
+        const playerSelection = '';
+        const computerSelection = getComputerChoice();
+        playRound(playerSelection, computerSelection);
+
+        if (playerCount > computerCount) {
+        youWon.style.display = 'block';
+        }
+        else if (computerWinCount > playerWinCount) {
+            youLost.style.display = 'block';            
+            
+        }
+        }
+    }
+game();
 
 
 

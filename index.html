@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissors Game</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
 </head>
 
 <body>
@@ -24,13 +25,17 @@
             <img src="images/Question-mark.svg" class="computer-question-mark" alt="">
         </div>
         <div class="score-container">
-            <div class="player-score">Player: <span>0</span> </div>
-            <div class="computer-score">Computer: <span>0</span></div>
+            <div class="player-score">Player: <span id="player-win-count">0</span></div>
+            <div class="computer-score">Computer: <span id="computer-win-count">0</span></div>
         </div>
         <div class="img-container">
             <img src="images/rock-icon.svg" class="rock-img" id="rock" alt="rock icon">
             <img src="images/paper-icon.svg" class="paper-img" id="paper" alt="paper icon">
             <img src="images/scissors-icon.svg" class="scissors-img" id="scissors" alt="scissors icon">
+        </div>
+        <div class="pop-up">
+            <p class="You-Won">You Are The Winner</p>
+            <p class="You-Lost">You Are The Looser</p>
         </div>
         <p class="last-paragraph">copyright &#169; 2023 Ayokunnumi</p>
         <audio src="win-sound.wav" id="audio-win"></audio>
