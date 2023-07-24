@@ -97,7 +97,8 @@ h1 {
     font-family: 'Times New Roman', Times, serif;
 }
 
-.pop-up {
+.you-Won,
+.you-Lost {
     display: none;
 }
 
