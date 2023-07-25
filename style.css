@@ -24,7 +24,7 @@ h1 {
 
 .h2-one {
     font-weight: 500;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .alert-h2 {
@@ -155,6 +155,12 @@ h1 {
         height: 50px;
         padding-top: 10px;
         letter-spacing: 10px;
+    }
+    .h2-one {
+        font-size: 50px;
+    }
+    .paragraph-one {
+        font-size: 25px;
     }
 
     .rock-img,

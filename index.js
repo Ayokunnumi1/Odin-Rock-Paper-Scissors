@@ -10,44 +10,44 @@ const alert = document.querySelector('.alert');
 const audioWin = document.querySelector('#audio-win');
 const audioLost = document.querySelector('#audio-lost');
 const audioTie = document.querySelector('#audio-tie')
+const youWon = document.querySelector('#you-won-sound');
 const playerWinCount = document.querySelector('#player-win-count');
 const computerWinCount = document.querySelector('#computer-win-count');
-const popUp = document.querySelector('.pop-up');
-const playerWinStatus = alert.querySelector('.alert-h2');
-const playerWinText = alert.querySelector('.alert-paragraph-text');
 let playerCount = 0;
 let computerCount = 0;
 
  function rockImageClicked (e) {
      instructionText.style.display = 'none';
-     pl
+     alert.style.display = 'block';
     playerQuestionMark.src = 'images/rock-icon.svg';
     playerSelection = e.target.id
     const computerChoice = getComputerChoice();
     // playRound(playerSelection, computerChoice)
     console.log(playRound(playerSelection, computerChoice))
-};
+}
  rockImage.addEventListener('click', rockImageClicked);
 
  function paperImageClicked (e) {
     instructionText.style.display = 'none';
+    alert.style.display = 'block';
     playerQuestionMark.src = 'images/paper-icon.svg';
     playerSelection = e.target.id
     const computerChoice = getComputerChoice();
     // playRound(playerSelection, computerChoice)
     console.log(playRound(playerSelection, computerChoice))
-};
+}
  paperImage.addEventListener('click', paperImageClicked);
 
 
  function scissorsImageClicked(e) {
     instructionText.style.display = 'none';
+    alert.style.display = 'block';
     playerQuestionMark.src = 'images/scissors-icon.svg';
     playerSelection = e.target.id
     const computerChoice = getComputerChoice();
     // playRound(playerSelection, computerChoice)
     console.log(playRound(playerSelection, computerChoice))
-};
+}
 scissorsImage.addEventListener('click', scissorsImageClicked);
 
 function getComputerChoice() {
@@ -119,13 +119,15 @@ function game() {
         // Reset game counts to start a new game
         playerCount = 0;
         computerCount = 0;
+        youWon.play();
         overlay.style.display = 'block';
         modalParagraph.textContent = 'You Won';
         playerWinCount.textContent = '0';
         computerWinCount.textContent = '0';
         instructionText.style.display = 'block';
-        playerWinStatus.style.display = 'none';
-        playerWinText.style.display = 'none';
+        // playerWinStatus.style.display = 'none';
+        // playerWinText.style.display = 'none';
+        alert.style.display = 'none'
         modalButton.addEventListener('click', () => {
         overlay.style.display = 'none';
         });
@@ -138,15 +140,15 @@ function game() {
         playerWinCount.textContent = '0';
         computerWinCount.textContent = '0';
         instructionText.style.display = 'block';
-        playerWinStatus.style.display = 'none';
-        playerWinText.style.display = 'none';
+        // playerWinStatus.style.display = 'none';
+        // playerWinText.style.display = 'none';
+        alert.style.display = 'none';
         modalButton.addEventListener('click', () => {
         overlay.style.display = 'none';
         });
         
     }
 }
-
 game();
    
    
