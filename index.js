@@ -11,6 +11,7 @@ const audioWin = document.querySelector('#audio-win');
 const audioLost = document.querySelector('#audio-lost');
 const audioTie = document.querySelector('#audio-tie')
 const youWon = document.querySelector('#you-won-sound');
+const youLose = document.querySelector('#you-lose-sound');
 const playerWinCount = document.querySelector('#player-win-count');
 const computerWinCount = document.querySelector('#computer-win-count');
 let playerCount = 0;
@@ -110,8 +111,8 @@ function game() {
     const overlay = document.querySelector('.overlay');
     const modalParagraph = document.querySelector('.modal-paragraph');
     const modalButton = document.querySelector('.modal-button');
-    const playerWinStatus = alert.querySelector('.alert-h2');
-    const playerWinText = alert.querySelector('.alert-paragraph-text');
+    // const playerWinStatus = alert.querySelector('.alert-h2');
+    // const playerWinText = alert.querySelector('.alert-paragraph-text');
     
     if (playerWinCount.textContent === '5') {
         console.log(playerWinCount.textContent);
@@ -136,6 +137,7 @@ function game() {
         modalParagraph.textContent = 'You Lost...';
         playerCount = 0;
         computerCount = 0;
+        youLose.play();
         // Reset game counts to start a new game
         playerWinCount.textContent = '0';
         computerWinCount.textContent = '0';

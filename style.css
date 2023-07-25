@@ -146,6 +146,11 @@ h1 {
     .img-container {
         gap: 5px;
     }
+
+    .h2-one {
+        font-size: 27px;
+        text-align: center;
+    }
 }
 
 @media screen and (min-width : 768px) {
