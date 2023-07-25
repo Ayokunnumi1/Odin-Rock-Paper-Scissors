@@ -13,11 +13,14 @@ const audioTie = document.querySelector('#audio-tie')
 const playerWinCount = document.querySelector('#player-win-count');
 const computerWinCount = document.querySelector('#computer-win-count');
 const popUp = document.querySelector('.pop-up');
+const playerWinStatus = alert.querySelector('.alert-h2');
+const playerWinText = alert.querySelector('.alert-paragraph-text');
 let playerCount = 0;
 let computerCount = 0;
 
  function rockImageClicked (e) {
-    instructionText.style.display = 'none';
+     instructionText.style.display = 'none';
+     pl
     playerQuestionMark.src = 'images/rock-icon.svg';
     playerSelection = e.target.id
     const computerChoice = getComputerChoice();
@@ -107,27 +110,36 @@ function game() {
     const overlay = document.querySelector('.overlay');
     const modalParagraph = document.querySelector('.modal-paragraph');
     const modalButton = document.querySelector('.modal-button');
+    const playerWinStatus = alert.querySelector('.alert-h2');
+    const playerWinText = alert.querySelector('.alert-paragraph-text');
+    
     if (playerWinCount.textContent === '5') {
         console.log(playerWinCount.textContent);
         
         // Reset game counts to start a new game
-        overlay.style.display = 'block';
-        modalParagraph.textContent = 'You Won';
         playerCount = 0;
         computerCount = 0;
+        overlay.style.display = 'block';
+        modalParagraph.textContent = 'You Won';
         playerWinCount.textContent = '0';
         computerWinCount.textContent = '0';
+        instructionText.style.display = 'block';
+        playerWinStatus.style.display = 'none';
+        playerWinText.style.display = 'none';
         modalButton.addEventListener('click', () => {
         overlay.style.display = 'none';
         });
     } else if (computerWinCount.textContent === '5') {
         overlay.style.display = 'block';
         modalParagraph.textContent = 'You Lost...';
-        // Reset game counts to start a new game
         playerCount = 0;
         computerCount = 0;
+        // Reset game counts to start a new game
         playerWinCount.textContent = '0';
         computerWinCount.textContent = '0';
+        instructionText.style.display = 'block';
+        playerWinStatus.style.display = 'none';
+        playerWinText.style.display = 'none';
         modalButton.addEventListener('click', () => {
         overlay.style.display = 'none';
         });
