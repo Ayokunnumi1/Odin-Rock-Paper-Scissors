@@ -104,25 +104,34 @@ function playRound(playerSelection, computerSelection) {
 
 
 function game() {
-    const youWon = document.querySelector('.you-Won')
-    const youLost = document.querySelector('.you-Lost');
-    // const computerSelection = getComputerChoice();
-    // playRound(playerSelection, computerSelection);
+    const overlay = document.querySelector('.overlay');
+    const modalParagraph = document.querySelector('.modal-paragraph');
+    const modalButton = document.querySelector('.modal-button');
     if (playerWinCount.textContent === '5') {
         console.log(playerWinCount.textContent);
-        youWon.style.display = 'block';
+        
         // Reset game counts to start a new game
+        overlay.style.display = 'block';
+        modalParagraph.textContent = 'You Won';
         playerCount = 0;
         computerCount = 0;
         playerWinCount.textContent = '0';
         computerWinCount.textContent = '0';
+        modalButton.addEventListener('click', () => {
+        overlay.style.display = 'none';
+        });
     } else if (computerWinCount.textContent === '5') {
-        youLost.style.display = 'block';
+        overlay.style.display = 'block';
+        modalParagraph.textContent = 'You Lost...';
         // Reset game counts to start a new game
         playerCount = 0;
         computerCount = 0;
         playerWinCount.textContent = '0';
         computerWinCount.textContent = '0';
+        modalButton.addEventListener('click', () => {
+        overlay.style.display = 'none';
+        });
+        
     }
 }
 

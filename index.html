@@ -14,7 +14,7 @@
     <section class="game-area">
         <div class="instruction-text">
             <h2 class="h2-one">Choose Your Weapon</h2>
-            <p class="paragraph-one">Play 5 times to WIN the game</p>
+            <p class="paragraph-one">First to get to 5 score Wins</p>
         </div>
         <div class="alert">
             <h2 class="alert-h2"></h2>
@@ -33,10 +33,14 @@
             <img src="images/paper-icon.svg" class="paper-img" id="paper" alt="paper icon">
             <img src="images/scissors-icon.svg" class="scissors-img" id="scissors" alt="scissors icon">
         </div>
-        <div class="pop-up">
-            <p class="you-Won">You Are The Winner</p>
-            <p class="you-Lost">You Are The Looser</p>
+       
+        <div class="overlay">
+            <div class="modal">
+                <p class="modal-paragraph"></p>
+                <button class="modal-button">Play Again</button>
+            </div>
         </div>
+        
         <p class="last-paragraph">copyright &#169; 2023 Ayokunnumi</p>
         <audio src="win-sound.wav" id="audio-win"></audio>
         <audio src="lost-sound.wav" id="audio-lost"></audio>
@@ -47,7 +51,7 @@
             Your browser does not support this audio
         </audio> -->
     </section>
-    
+
     <script src="index.js"></script>
 </body>
 
