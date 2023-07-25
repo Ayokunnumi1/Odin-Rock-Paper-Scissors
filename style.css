@@ -135,8 +135,6 @@ h1 {
     border: 2px solid #fff000;
 }
 
-
-
 @media screen and (min-width : 350px) {
     h2 {
         font-weight: 300px;
@@ -151,6 +149,22 @@ h1 {
         font-size: 27px;
         text-align: center;
     }
+}
+
+@media screen and (min-width : 720px) {
+    .game-area {
+            gap: 40px;
+        }
+    
+        .score-container {
+            display: flex;
+            gap: 50px;
+        }
+    
+        #player-win-count,
+        #computer-win-count {
+            margin-left: 20px;
+        }
 }
 
 @media screen and (min-width : 768px) {
