@@ -102,7 +102,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    border: 3px solid #1e517b ;
+    border: 3px solid #1e517b;
     border-radius: 15px;
     padding: 15px;
     position: fixed;
@@ -151,20 +151,52 @@ h1 {
     }
 }
 
-@media screen and (min-width : 720px) {
+@media screen and (min-width : 600px) {
     .game-area {
-            gap: 40px;
-        }
-    
-        .score-container {
-            display: flex;
-            gap: 50px;
-        }
-    
-        #player-win-count,
-        #computer-win-count {
-            margin-left: 20px;
-        }
+        gap: 40px;
+    }
+
+    .score-container {
+        display: flex;
+        gap: 50px;
+    }
+
+    #player-win-count,
+    #computer-win-count {
+        margin-left: 20px;
+    }
+}
+
+@media screen and (min-width : 700px) {
+    .game-area {
+        gap: 40px;
+    }
+
+    .score-container {
+        display: flex;
+        gap: 50px;
+    }
+
+    #player-win-count,
+    #computer-win-count {
+        margin-left: 20px;
+    }
+}
+
+@media screen and (min-width : 700px) and (-webkit-min-device-pixel-ratio: 2) {
+    .game-area {
+        gap: 40px;
+    }
+
+    .score-container {
+        display: flex;
+        gap: 50px;
+    }
+
+    #player-win-count,
+    #computer-win-count {
+        margin-left: 20px;
+    }
 }
 
 @media screen and (min-width : 768px) {
@@ -175,9 +207,11 @@ h1 {
         padding-top: 10px;
         letter-spacing: 10px;
     }
+
     .h2-one {
         font-size: 50px;
     }
+
     .paragraph-one {
         font-size: 25px;
     }
